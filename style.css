@@ -1,1 +1,55 @@
+/* 重置默认样式 */
+body {
+  margin: 0;
+  padding: 0;
+}
 
+/* 全局样式 */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* 页眉样式 */
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 28px;
+}
+
+/* 主要内容样式 */
+main {
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* 页脚样式 */
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+  font-size: 12px;
+}
