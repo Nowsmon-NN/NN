@@ -4,6 +4,41 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* 新增的自定义 CSS 样式 */
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .column {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .item {
+      margin-bottom: 20px;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .item p {
+      margin-top: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+  <script src="latestArticles.js"></script>
 </head>
 <body>
   <header>
@@ -22,62 +57,21 @@
 
   <main>
     <section class="container">
-      <h2>Articles</h2>
       <div class="column">
-        <div class="item">
-          <h3>Article 1</h3>
-          <img src="article1-thumbnail.jpg" alt="Article 1 Thumbnail">
-          <p>Introduction text of Article 1 (less than 200 words)...</p>
-          <a href="article1.html" class="button">Read Full Article</a>
-        </div>
+        <h2>Articles</h2>
+        <div class="item" id="latestArticles"></div>
       </div>
       <div class="column">
-        <div class="item">
-          <h3>Article 2</h3>
-          <img src="article2-thumbnail.jpg" alt="Article 2 Thumbnail">
-          <p>Introduction text of Article 2 (less than 200 words)...</p>
-          <a href="article2.html" class="button">Read Full Article</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="container">
-      <h2>Videos</h2>
-      <div class="column">
-        <div class="item">
-          <h3>Video 1</h3>
-          <img src="video1-thumbnail.jpg" alt="Video 1 Thumbnail">
-          <p>Introduction text of Video 1 (less than 200 words)...</p>
-          <a href="video1.html" class="button">Watch Video</a>
-        </div>
+        <h2>Videos</h2>
+        <div class="item" id="latestVideos"></div>
       </div>
       <div class="column">
-        <div class="item">
-          <h3>Video 2</h3>
-          <img src="video2-thumbnail.jpg" alt="Video 2 Thumbnail">
-          <p>Introduction text of Video 2 (less than 200 words)...</p>
-          <a href="video2.html" class="button">Watch Video</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="container">
-      <h2>Ideas</h2>
-      <div class="column">
-        <div class="item">
-          <h3>Idea 1</h3>
-          <img src="idea1-thumbnail.jpg" alt="Idea 1 Thumbnail">
-          <p>Introduction text of Idea 1 (less than 200 words)...</p>
-          <a href="idea1.html" class="button">Read Full Idea</a>
-        </div>
+        <h2>Ideas</h2>
+        <div class="item" id="latestIdeas"></div>
       </div>
       <div class="column">
-        <div class="item">
-          <h3>Idea 2</h3>
-          <img src="idea2-thumbnail.jpg" alt="Idea 2 Thumbnail">
-          <p>Introduction text of Idea 2 (less than 200 words)...</p>
-          <a href="idea2.html" class="button">Read Full Idea</a>
-        </div>
+        <h2>About Me</h2>
+        <div class="item" id="aboutMe"></div>
       </div>
     </section>
   </main>
@@ -85,5 +79,129 @@
   <footer>
     <p>&copy; 2023 My Website. All rights reserved.</p>
   </footer>
+
+  <script>
+    // 模拟最新文章的数据
+    const latestArticlesData = [
+      {
+        title: "Article 1",
+        thumbnail: "article1-thumbnail.jpg",
+        introduction: "Introduction text of Article 1 (less than 200 words)...",
+        link: "article1.html"
+      },
+      {
+        title: "Article 2",
+        thumbnail: "article2-thumbnail.jpg",
+        introduction: "Introduction text of Article 2 (less than 200 words)...",
+        link: "article2.html"
+      }
+    ];
+
+    // 模拟最新视频的数据
+    const latestVideosData = [
+      {
+        title: "Video 1",
+        thumbnail: "video1-thumbnail.jpg",
+        introduction: "Introduction text of Video 1 (less than 200 words)...",
+        link: "video1.html"
+      },
+      {
+        title: "Video 2",
+        thumbnail: "video2-thumbnail.jpg",
+        introduction: "Introduction text of Video 2 (less than 200 words)...",
+        link: "video2.html"
+      }
+    ];
+
+    // 模拟最新想法的数据
+    const latestIdeasData = [
+      {
+        title: "Idea 1",
+        thumbnail: "idea1-thumbnail.jpg",
+        introduction: "Introduction text of Idea 1 (less than 200 words)...",
+        link: "idea1.html"
+      },
+      {
+        title: "Idea 2",
+        thumbnail: "idea2-thumbnail.jpg",
+        introduction: "Introduction text of Idea 2 (less than 200 words)...",
+        link: "idea2.html"
+      }
+    ];
+
+    // 模拟关于我的数据
+    const aboutMeData = {
+      title: "About Me",
+      thumbnail: "about-me-thumbnail.jpg",
+      introduction: "Introduction text about me (less than 200 words)...",
+      link: "about.html"
+    };
+
+    // 获取最新文章容器的 DOM 元素
+    const latestArticlesContainer = document.getElementById("latestArticles");
+
+    // 动态生成最新文章的 HTML 内容
+    const latestArticlesHTML = latestArticlesData.map(article => `
+      <div class="item"column">
+        <div class="item">
+          <h3>${article.title}</h3>
+          <img src="${article.thumbnail}" alt="${article.title} Thumbnail">
+          <p>${article.introduction}</p>
+          <a href="${article.link}" class="button">Read Full Article</a>
+        </div>
+      </div>
+    `).join("");
+
+    // 将最新文章的 HTML 内容插入到容器中
+    latestArticlesContainer.innerHTML = latestArticlesHTML;
+
+    // 获取最新视频容器的 DOM 元素
+    const latestVideosContainer = document.getElementById("latestVideos");
+
+    // 动态生成最新视频的 HTML 内容
+    const latestVideosHTML = latestVideosData.map(video => `
+      <div class="item">
+        <h3>${video.title}</h3>
+        <img src="${video.thumbnail}" alt="${video.title} Thumbnail">
+        <p>${video.introduction}</p>
+        <a href="${video.link}" class="button">Watch Video</a>
+      </div>
+    `).join("");
+
+    // 将最新视频的 HTML 内容插入到容器中
+    latestVideosContainer.innerHTML = latestVideosHTML;
+
+    // 获取最新想法容器的 DOM 元素
+    const latestIdeasContainer = document.getElementById("latestIdeas");
+
+    // 动态生成最新想法的 HTML 内容
+    const latestIdeasHTML = latestIdeasData.map(idea => `
+      <div class="item">
+        <h3>${idea.title}</h3>
+        <img src="${idea.thumbnail}" alt="${idea.title} Thumbnail">
+        <p>${idea.introduction}</p>
+        <a href="${idea.link}" class="button">View Idea</a>
+      </div>
+    `).join("");
+
+    // 将最新想法的 HTML 内容插入到容器中
+    latestIdeasContainer.innerHTML = latestIdeasHTML;
+
+    // 获取关于我的容器的 DOM 元素
+    const aboutMeContainer = document.getElementById("aboutMe");
+
+    // 动态生成关于我的 HTML 内容
+    const aboutMeHTML = `
+      <div class="item">
+        <h3>${aboutMeData.title}</h3>
+        <img src="${aboutMeData.thumbnail}" alt="${aboutMeData.title} Thumbnail">
+        <p>${aboutMeData.introduction}</p>
+        <a href="${aboutMeData.link}" class="button">Read More</a>
+      </div>
+    `;
+
+    // 将关于我的 HTML 内容插入到容器中
+    aboutMeContainer.innerHTML = aboutMeHTML;
+  </script>
 </body>
 </html>
