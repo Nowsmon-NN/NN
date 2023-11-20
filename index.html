@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>我的个人网站</title>
+  <meta charset="UTF-8">
+  <title>My Website</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
-    /* CSS样式 */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    
-    h1 {
-      color: #333;
-    }
-    
-    p {
-      color: #666;
-    }
-  </style>
 </head>
 <body>
   <header>
-    <h1>欢迎来到我的个人网站</h1>
+    <h1>Welcome to My Website</h1>
   </header>
-  
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="ideas.html">Ideas</a></li>
+      <li><a href="about.html">About Me</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section>
-      <h2>关于我</h2>
-      <p>这里是关于我自己的一些介绍。</p>
-    </section>
-    
-    <section>
-      <h2>我的知识总结</h2>
-      <ul>
-        <li>知识总结1</li>
-        <li>知识总结2</li>
-        <li>知识总结3</li>
-      </ul>
-    </section>
-    
-    <section>
-      <h2>我的作品</h2>
-      <img src="my-artwork.jpg" alt="我的作品">
-    </section>
+    <div class="container">
+      <div class="column">
+        <h2>Articles</h2>
+        <p>Content of the Articles page goes here...</p>
+      </div>
+      <div class="column">
+        <h2>Videos</h2>
+        <p>Content of the Videos page goes here...</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="column">
+        <h2>Ideas</h2>
+        <p>Content of the Ideas page goes here...</p>
+      </div>
+      <div class="column">
+        <h2>About Me</h2>
+        <p>Content of the About Me page goes here...</p>
+      </div>
+    </div>
   </main>
-  
+
   <footer>
-    <p>&copy; 2023 我的个人网站. 版权所有.</p>
+    <p>&copy; 2023 My Website. All rights reserved.</p>
   </footer>
 </body>
 </html>
